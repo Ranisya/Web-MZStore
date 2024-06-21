@@ -9,9 +9,8 @@
     <meta property="og:title" content="MZ Store">
     <meta property="og:url" content="https://MZStore.com/">
     <link href="img/logo.png" rel="icon">
-    <link href=""img/logo.jpg" rel=""appel-touch-icon">
+    <link href="img/logo.jpg" rel="apple-touch-icon">
     <style>
-        
         body {
             font-family: 'Times New Roman', Times, serif;
             color: rgb(16, 81, 5);
@@ -32,10 +31,14 @@
             align-items: center;
             background-color: #4CAF50;
             padding: 1em 2em;
-            position: sticky;
+            position: relative;
             top: 0;
             z-index: 1000;
+            height: 2cm;
+            transition: all 0.5s ease-in-out;
+            overflow: hidden;
         }
+
         .navbar .logo img {
             height: 50px;
         }
@@ -155,11 +158,57 @@
             margin-left: auto;
             margin-right: auto;
         }
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                height: 1cm;
+                align-items: flex-start;
+                transition: all 0.5s ease-in-out;
+            }
+            .navbar:hover{
+                height: 15cm;
+            }
+            .navbar .menu {
+                flex-direction: column;
+                gap: 0.5em;
+                width: 100%;
+            }
+            .navbar .contact-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5em;
+                width: 100%;
+            }
+            .hero h1 {
+                font-size: 2em;
+            }
+            .hero p {
+                font-size: 1em;
+            }
+            .hero {
+                padding: 2em 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 1em;
+            }
+            .hero h1 {
+                font-size: 1.5em;
+            }
+            .hero p {
+                font-size: 0.9em;
+            }
+            .hero .cta-button {
+                padding: 0.5em 1em;
+            }
+        }
     </style>
 </head>
 <body>
     <link href="img/log.png" rel="icon">
-    <link href=""img/srf.jpg" rel=""appel-touch-icon">
+    <link href="img/srf.jpg" rel="apple-touch-icon">
     <div class="navbar">
         <div class="logo">
             <img src="img/logo.png" alt="MZ Store Logo">
@@ -314,7 +363,7 @@
                 slideIndex++;
                 if (slideIndex > slides.length) slideIndex = 1;
                 slides[slideIndex - 1].style.display = 'block';
-                setTimeout(showSlides, 3000); // Change image every 3 seconds
+                setTimeout(showSlides, 3000); 
             }
 
             document.getElementById('prev').addEventListener('click', () => {
@@ -343,7 +392,7 @@ Nama: ${encodeURIComponent(name)}
 Whatsapp: ${encodeURIComponent(whatsapp)}
 Paket: ${encodeURIComponent(package)}
 Metode Bayar: ${encodeURIComponent(payment)}`;
-                const whatsappUrl = `https://wa.me/6289502567788?text=${encodeURIComponent(whatsappMessage)}`;
+                const whatsappUrl = https://wa.me/6289502567788?text=${encodeURIComponent(whatsappMessage)};
                 window.open(whatsappUrl, '_blank');
             });
         });
